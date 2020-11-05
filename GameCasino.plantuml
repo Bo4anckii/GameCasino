@@ -1,0 +1,38 @@
+@startuml
+
+title __GAMECASINO's Class Diagram__\n
+
+  namespace sample {
+    class sample.Controller {
+                    + pane : Pane
+                    + initialize()
+                }
+                class sample.Main {
+                    {static} + main()
+                    + start()
+                }
+    namespace model {
+        class sample.model.CasinoGame {
+                - int1 : int
+                - int2 : int
+                - int3 : int
+                - pane : Pane
+                - stop : Button
+                - text1 : Text
+                - text2 : Text
+                - text3 : Text
+                - timer1 : Timer
+                - timer2 : Timer
+                - timer3 : Timer
+                + CasinoGame()
+                - initView()
+                - newGame()
+        }
+    }
+  }
+
+  sample.Controller .up.|> Initializable
+  sample.Main -up-|> Application
+  sample.Controller ..> sample.model.CasinoGame
+
+@enduml
