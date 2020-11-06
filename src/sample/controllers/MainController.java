@@ -4,20 +4,21 @@ import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import sample.models.Model;
+import sample.models.ActionChain;
+import sample.models.MainModel;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
 
     public Label text1;
     public Label text2;
     public Label text3;
     public Button stopBtn;
-    private final Model model = new Model();
+    private final MainModel model = new MainModel();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,8 +35,9 @@ public class Controller implements Initializable {
                 model.getTimer2().cancel();
                 stopBtn.setOnMouseClicked(e3 -> {
                     model.getTimer3().cancel();
-                    if (text1.getText().equals(text2.getText()) && text2.getText().equals(text3.getText()))
+                    if(new ActionChain().process(new int[]{model.getInt1(), model.getInt2(), model.getInt3()})){
                         stopBtn.setText("Вы выиграли. Начать заново");
+                    }
                     else
                         stopBtn.setText("Вы проиграли. Начать заново");
                     stopBtn.setOnMouseClicked(e4 -> newGame());

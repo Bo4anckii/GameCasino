@@ -2,7 +2,7 @@ package sample.models;
 
 import java.util.Timer;
 
-public class Model {
+public class MainModel {
     private Timer timer1;
     private Timer timer2;
     private Timer timer3;
