@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
     <Label fx:id="text1" layoutX="97.0" layoutY="123.0" prefHeight="155.0" text="9" AnchorPane.bottomAnchor="122.0"
            AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="123.0">
         <font>
